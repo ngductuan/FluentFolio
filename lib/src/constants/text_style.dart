@@ -1,5 +1,5 @@
-import 'package:fluentfolio/src/constants/color_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:fluentfolio/src/constants/styles.dart';
 
 extension ExtendedTextStyle on TextStyle {
   TextStyle get light {
@@ -21,14 +21,22 @@ extension ExtendedTextStyle on TextStyle {
     return copyWith(fontWeight: FontWeight.w500);
   }
 
-  TextStyle get fontHeader {
+  TextStyle get semibold {
+    return copyWith(fontWeight: FontWeight.w600);
+  }
+
+  TextStyle get bold {
+    return copyWith(fontWeight: FontWeight.w700);
+  }
+
+  TextStyle get fontSuperHeader {
     return copyWith(
       fontSize: 22,
       height: 22 / 20,
     );
   }
 
-  TextStyle get fontSubHeader {
+  TextStyle get fontHeader {
     return copyWith(
       fontSize: 18,
       height: 18 / 16,
@@ -42,28 +50,12 @@ extension ExtendedTextStyle on TextStyle {
     );
   }
 
-  TextStyle get semibold {
-    return copyWith(fontWeight: FontWeight.w600);
-  }
-
-  TextStyle get bold {
-    return copyWith(fontWeight: FontWeight.w700);
-  }
-
-  TextStyle get text1Color {
-    return copyWith(color: ColorPalette.text1Color);
-  }
-
-  TextStyle get primaryTextColor {
-    return copyWith(color: ColorPalette.primaryColor);
-  }
-
   TextStyle get whiteTextColor {
-    return copyWith(color: Colors.white);
+    return copyWith(color: AppColor.white);
   }
 
   TextStyle get subTitleTextColor {
-    return copyWith(color: ColorPalette.subTitleColor);
+    return copyWith(color: AppColor.defaultFontLight.shade500);
   }
 
   // convenience functions
@@ -76,19 +68,15 @@ extension ExtendedTextStyle on TextStyle {
   }
 }
 
-class TextStyles {
-  TextStyles(this.context);
+class AppTextStyle {
+  AppTextStyle(this.context);
 
   BuildContext? context;
 
   static const TextStyle defaultStyle = TextStyle(
     fontSize: 16,
-    color: ColorPalette.text1Color,
+    color: AppColor.defaultFontLight,
     fontWeight: FontWeight.w400,
-    height: 16 / 14,
+    height: 16 / 13,
   );
 }
-
-// How to use?
-// Text('test text', style: TextStyles.normalText.semibold.whiteColor);
-// Text('test text', style: TextStyles.itemText.whiteColor.bold);

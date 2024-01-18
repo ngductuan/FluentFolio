@@ -1,10 +1,8 @@
 import 'dart:async';
-import 'package:fluentfolio/src/constants/dim_constants.dart';
-import 'package:fluentfolio/src/constants/textstyle_constant.dart';
-import 'package:fluentfolio/src/features/accounts/presentation/views/sign_in_screen.dart';
+import 'package:fluentfolio/src/constants/styles.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
-import 'package:fluentfolio/src/shared/widegts/button_widget.dart';
+import 'package:fluentfolio/src/shared/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -45,23 +43,23 @@ class _IntroScreenState extends State<IntroScreen> {
           ),
         ),
         const SizedBox(
-          height: kMediumPadding * 2,
+          height: spacing24 * 2,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kMediumPadding),
+          padding: const EdgeInsets.symmetric(horizontal: padding24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 title,
-                style: TextStyles.defaultStyle.bold,
+                style: AppTextStyle.defaultStyle.bold,
               ),
               const SizedBox(
-                height: kMediumPadding,
+                height: spacing24,
               ),
               Text(
                 des,
-                style: TextStyles.defaultStyle,
+                style: AppTextStyle.defaultStyle,
               )
             ],
           ),
@@ -95,9 +93,9 @@ class _IntroScreenState extends State<IntroScreen> {
           ],
         ),
         Positioned(
-            left: kMediumPadding,
-            right: kMediumPadding,
-            bottom: kMediumPadding * 3,
+            left: spacing16,
+            right: spacing16,
+            bottom: spacing16 * 3,
             child: Row(
               children: [
                 Expanded(
@@ -106,8 +104,8 @@ class _IntroScreenState extends State<IntroScreen> {
                     controller: _pageController,
                     count: 3,
                     effect: const ExpandingDotsEffect(
-                        dotWidth: kMinPadding,
-                        dotHeight: kMinPadding,
+                        dotWidth: padding4,
+                        dotHeight: padding4,
                         activeDotColor: Colors.orange),
                   ),
                 ),
@@ -116,16 +114,19 @@ class _IntroScreenState extends State<IntroScreen> {
                     builder: (context, snapshot) {
                       return Expanded(
                         flex: 3,
-                        child: ButtonWidget(
+                        child: ElevatedCustom(
                           title: snapshot.data != 2 ? 'Next' : 'Get started',
+                          radius: radius24,
+                          width: spacing24,
+                          color: AppColor.mainColor2,
                           ontap: () {
                             if (_pageController.page != 2) {
                               _pageController.nextPage(
                                   duration: const Duration(milliseconds: 400),
                                   curve: Curves.easeIn);
                             } else {
-                              Navigator.of(context)
-                                  .pushNamed(SignInScreen.routeName);
+                              // Navigator.of(context)
+                              //     .pushNamed(SignInScreen.routeName);
                             }
                           },
                         ),

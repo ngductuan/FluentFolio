@@ -31,3 +31,6 @@ const radius8 = 8.0;
 const radius12 = 12.0;
 const radius16 = 16.0;
 const radius24 = 24.0;
+
+// Example
+// const BorderRadius kDefaultBorderRadius = BorderRadius.all(Radius.circular(8));
