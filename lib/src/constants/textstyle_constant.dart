@@ -28,6 +28,13 @@ extension ExtendedTextStyle on TextStyle {
     );
   }
 
+  TextStyle get fontSubHeader {
+    return copyWith(
+      fontSize: 18,
+      height: 18 / 16,
+    );
+  }
+
   TextStyle get fontCaption {
     return copyWith(
       fontSize: 12,
@@ -75,7 +82,7 @@ class TextStyles {
   BuildContext? context;
 
   static const TextStyle defaultStyle = TextStyle(
-    fontSize: 14,
+    fontSize: 16,
     color: ColorPalette.text1Color,
     fontWeight: FontWeight.w400,
     height: 16 / 14,
