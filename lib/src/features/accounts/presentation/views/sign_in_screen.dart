@@ -1,3 +1,4 @@
+import 'package:fluentfolio/src/shared/widgets/elevated_button.dart';
 import 'package:fluentfolio/src/shared/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
@@ -47,6 +48,13 @@ class _SignInScreenState extends State<SignInScreen> {
             const InputTypeCustom(
               title: 'Password',
               inputType: 'password',
+            ),
+            const SizedBox(
+              height: spacing32,
+            ),
+            const ElevatedCustom(
+              title: 'Sign in',
+              radius: radius24,
             )
           ],
         ),

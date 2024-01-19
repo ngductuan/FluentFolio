@@ -138,7 +138,7 @@ class AppColorSwatch {
     600: Color.fromRGBO(58, 175, 255, .7),
     700: Color.fromRGBO(58, 175, 255, .8),
     800: Color.fromRGBO(58, 175, 255, .9),
-    900: Color.fromRGBO(58, 175, 255, 1),
+    900: Color.fromARGB(255, 58, 175, 255),
   };
   static const Map<int, Color> mainColor1ContainerSwatch = {
     50: Color.fromRGBO(96, 188, 251, .1),
