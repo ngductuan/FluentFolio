@@ -6,16 +6,16 @@ import 'package:fluentfolio/src/shared/widgets/elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class IntroScreen extends StatefulWidget {
-  const IntroScreen({super.key});
+class IntroView extends StatefulWidget {
+  const IntroView({super.key});
 
   static String routeName = '/intro_screen';
 
   @override
-  State<IntroScreen> createState() => _IntroScreenState();
+  State<IntroView> createState() => _IntroViewState();
 }
 
-class _IntroScreenState extends State<IntroScreen> {
+class _IntroViewState extends State<IntroView> {
   final PageController _pageController = PageController();
 
   final StreamController<int> _pageStreamController =

@@ -5,16 +5,16 @@ import 'package:fluentfolio/src/helpers/image_helpers.dart';
 import 'package:fluentfolio/src/helpers/local_storage_helper.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   static String routeName = '/splash_screen';
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashViewState extends State<SplashView> {
   void _routeIntroScr(BuildContext context) async {
     final ignoreSplash = LocalStorageHelper.getValue('ignoreSplash') as bool?;
     await Future.delayed(const Duration(milliseconds: 2000));
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       LocalStorageHelper.setValue('ignoreSplash', true);
       if (context.mounted) {
-        Navigator.pushNamed(context, IntroScreen.routeName);
+        Navigator.pushNamed(context, IntroView.routeName);
       }
     }
   }

@@ -1,4 +1,7 @@
-import 'package:fluentfolio/src/features/authentication/presentation/widgets/sign_in_icon.dart';
+import 'dart:ffi';
+
+import 'package:fluentfolio/src/features/authentication/presentation/views/sign_up_view.dart';
+import 'package:fluentfolio/src/features/authentication/presentation/widgets/other_sign_in_icon.dart';
 import 'package:fluentfolio/src/shared/widgets/elevated_button.dart';
 import 'package:fluentfolio/src/shared/widgets/text_field.dart';
 import 'package:flutter/material.dart';
@@ -59,33 +62,59 @@ class _SignInViewState extends State<SignInView> {
                   ),
                 ),
               ),
-              const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SignInIcon(
-                    flex: 5,
-                    imagePath: AssetHelper.logoFacebook,
-                    alignment: Alignment.centerRight,
+              const Center(
+                child: SizedBox(
+                  width: 250, // isApple ? 150 ? 250
+                  height: 40,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      OtherSignInIcon(
+                        imagePath: AssetHelper.logoGoogle,
+                      ),
+                      OtherSignInIcon(
+                        imagePath: AssetHelper.logoFacebook,
+                      ),
+                      OtherSignInIcon(
+                        imagePath: AssetHelper.logoApple,
+                      ),
+                    ],
                   ),
-                  SignInIcon(
-                    flex: 4,
-                    imagePath: AssetHelper.logoGoogle,
-                  ),
-                  SignInIcon(
-                    flex: 5,
-                    imagePath: AssetHelper.logoApple,
-                    alignment: Alignment.centerLeft,
-                  ),
-                ],
+                ),
               ),
-              Center(
-                  heightFactor: 3,
-                  child: Text(
-                    TextDoc.txtForgotPassword,
-                    style: AppTextStyle.defaultStyle
-                        .setColor(AppColor.mainColor1)
-                        .semibold,
-                  ))
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: spacing32),
+                child: Center(
+                    child: Text(
+                  TextDoc.txtForgotPassword,
+                  style: AppTextStyle.defaultStyle
+                      .setColor(AppColor.mainColor1)
+                      .semibold,
+                )),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(bottom: spacing48, top: spacing16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(TextDoc.txtHaveNoAccount,
+                        style: AppTextStyle.defaultStyle),
+                    const SizedBox(width: spacing12),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, SignUpView.routeName);
+                      },
+                      child: Text(
+                        TextDoc.txtSignUp,
+                        style: AppTextStyle.defaultStyle
+                            .setColor(AppColor.mainColor1)
+                            .semibold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
