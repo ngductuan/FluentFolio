@@ -1,5 +1,5 @@
-import 'package:fluentfolio/src/features/accounts/presentation/views/sign_in_screen.dart';
-import 'package:fluentfolio/src/features/general/intro_screen.dart';
+import 'package:fluentfolio/src/features/authentication/presentation/views/sign_in_view.dart';
+import 'package:fluentfolio/src/features/general/intro_view.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
 import 'package:fluentfolio/src/helpers/local_storage_helper.dart';
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (ignoreSplash != null && ignoreSplash) {
       if (context.mounted) {
-        Navigator.pushNamed(context, SignInScreen.routeName);
+        Navigator.pushNamed(context, SignInView.routeName);
       }
     } else {
       LocalStorageHelper.setValue('ignoreSplash', true);

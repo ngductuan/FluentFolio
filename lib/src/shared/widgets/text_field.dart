@@ -1,16 +1,19 @@
+import 'package:fluentfolio/src/constants/colors.dart';
 import 'package:fluentfolio/src/constants/dimensions.dart';
 import 'package:fluentfolio/src/constants/text_style.dart';
 import 'package:flutter/material.dart';
 
-class InputTypeCustom extends StatelessWidget {
-  const InputTypeCustom({
+class TextFieldCustom extends StatelessWidget {
+  const TextFieldCustom({
     Key? key,
     required this.title,
     required this.inputType,
+    this.borderColor,
   }) : super(key: key);
 
   final String title;
   final String inputType;
+  final Color? borderColor;
 
   // Function to determine keyboardType based on inputType
   TextInputType _getKeyboardType(String inputType) {
@@ -44,13 +47,17 @@ class InputTypeCustom extends StatelessWidget {
             focusColor: Colors.red,
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                  color: Colors.yellow[700] ?? Colors.yellow, width: 2),
+                  color: borderColor ?? Colors.yellow.shade700, width: 2),
             ),
             enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey),
+              borderSide: BorderSide(color: AppColor.shadow),
             ),
-            suffixIcon:
-                inputType == 'password' ? const Icon(Icons.visibility) : null,
+            suffixIcon: inputType == 'password'
+                ? const Icon(
+                    Icons.visibility,
+                    color: AppColor.shadow,
+                  )
+                : null,
           ),
           keyboardType: _getKeyboardType(inputType),
           // textInputAction: TextInputAction.done,

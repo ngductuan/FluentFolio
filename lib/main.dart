@@ -1,5 +1,5 @@
 import 'package:fluentfolio/routes.dart';
-import 'package:fluentfolio/src/features/general/splash_screen.dart';
+import 'package:fluentfolio/src/features/general/splash_view.dart';
 import 'package:fluentfolio/src/helpers/local_storage_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';

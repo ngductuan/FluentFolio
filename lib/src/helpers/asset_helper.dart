@@ -12,5 +12,8 @@ class AssetHelper {
 
   //Assets in logo
   static const String logoBackgroundSplash = 'assets/logo/fluent_folio_bg.png';
+  static const String logoFacebook = 'assets/logo/facebook.png';
+  static const String logoGoogle = 'assets/logo/google.png';
+  static const String logoApple = 'assets/logo/apple.png';
 
 }
