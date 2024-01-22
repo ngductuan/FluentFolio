@@ -10,6 +10,7 @@ class AssetHelper {
   // Assets in illustration
   static const String illuSignIn = 'assets/illustration/sign-in-illustration.png';
   static const String illuSignUp = 'assets/illustration/sign-up-illustration.png';
+  static const String illuForgotPassword = 'assets/illustration/forgot-password-illustration.png';
 
   //Assets in logo
   static const String logoBackgroundSplash = 'assets/logo/fluent_folio_bg.png';

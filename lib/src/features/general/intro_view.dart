@@ -52,14 +52,14 @@ class _IntroViewState extends State<IntroView> {
             children: [
               Text(
                 title,
-                style: AppTextStyle.defaultStyle.bold,
+                style: AppTextStyle(context).getDefaultStyle().bold,
               ),
               const SizedBox(
                 height: spacing24,
               ),
               Text(
                 des,
-                style: AppTextStyle.defaultStyle,
+                style: AppTextStyle(context).getDefaultStyle(),
               )
             ],
           ),

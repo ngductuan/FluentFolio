@@ -46,7 +46,11 @@ class _ElevatedCustomState extends State<ElevatedCustom> {
             alignment: Alignment.center,
             child: Text(
               widget.title,
-              style: widget.textStyle ?? AppTextStyle.defaultStyle.bold,
+              style: widget.textStyle ??
+                  AppTextStyle(context)
+                      .getDefaultStyle()
+                      .setColor(AppColor.defaultFontLight)
+                      .bold,
             ),
           ),
         ),

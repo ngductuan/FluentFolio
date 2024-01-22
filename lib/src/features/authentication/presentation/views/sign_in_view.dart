@@ -1,5 +1,5 @@
-import 'dart:ffi';
-
+import 'package:fluentfolio/src/constants/theme.dart';
+import 'package:fluentfolio/src/features/authentication/presentation/views/reset_password.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/widgets/other_sign_in_icon.dart';
 import 'package:fluentfolio/src/shared/widgets/elevated_button.dart';
@@ -12,7 +12,7 @@ import 'package:fluentfolio/src/constants/styles.dart';
 class SignInView extends StatefulWidget {
   const SignInView({Key? key}) : super(key: key);
 
-  static String routeName = '/sign_in_screen';
+  static String routeName = '/sign_in_view';
 
   @override
   State<SignInView> createState() => _SignInViewState();
@@ -34,7 +34,7 @@ class _SignInViewState extends State<SignInView> {
               const SizedBox(height: spacing16),
               Text(
                 TextDoc.txtSignInIntroduction,
-                style: AppTextStyle.defaultStyle.fontHeader.bold,
+                style: AppTextStyle(context).getDefaultStyle().fontHeader.bold,
                 textAlign: TextAlign.start,
               ),
               const SizedBox(height: spacing16),
@@ -55,10 +55,10 @@ class _SignInViewState extends State<SignInView> {
               Container(
                 padding:
                     const EdgeInsets.only(top: spacing32, bottom: spacing24),
-                child: const Center(
+                child: Center(
                   child: Text(
                     TextDoc.txtOrLoginWith,
-                    style: AppTextStyle.defaultStyle,
+                    style: AppTextStyle(context).getDefaultStyle(),
                   ),
                 ),
               ),
@@ -85,11 +85,17 @@ class _SignInViewState extends State<SignInView> {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: spacing32),
                 child: Center(
-                    child: Text(
-                  TextDoc.txtForgotPassword,
-                  style: AppTextStyle.defaultStyle
-                      .setColor(AppColor.mainColor1)
-                      .semibold,
+                    child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, ResetPasswordView.routeName);
+                  },
+                  child: Text(
+                    TextDoc.txtForgotPassword,
+                    style: AppTextStyle(context)
+                        .getDefaultStyle()
+                        .setColor(AppColor.mainColor1)
+                        .semibold,
+                  ),
                 )),
               ),
               Padding(
@@ -98,8 +104,8 @@ class _SignInViewState extends State<SignInView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(TextDoc.txtHaveNoAccount,
-                        style: AppTextStyle.defaultStyle),
+                    Text(TextDoc.txtHaveNoAccount,
+                        style: AppTextStyle(context).getDefaultStyle()),
                     const SizedBox(width: spacing12),
                     GestureDetector(
                       onTap: () {
@@ -107,7 +113,8 @@ class _SignInViewState extends State<SignInView> {
                       },
                       child: Text(
                         TextDoc.txtSignUp,
-                        style: AppTextStyle.defaultStyle
+                        style: AppTextStyle(context)
+                            .getDefaultStyle()
                             .setColor(AppColor.mainColor1)
                             .semibold,
                       ),

@@ -35,13 +35,13 @@ class TextFieldCustom extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextStyle.defaultStyle.fontHeader.bold,
+          style: AppTextStyle(context).getDefaultStyle().fontHeader.bold,
         ),
         const SizedBox(
           height: spacing16,
         ),
         TextField(
-          style: AppTextStyle.defaultStyle.fontHeader,
+          style: AppTextStyle(context).getDefaultStyle().fontHeader,
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
             focusColor: Colors.red,

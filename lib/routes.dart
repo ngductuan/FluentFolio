@@ -1,3 +1,4 @@
+import 'package:fluentfolio/src/features/authentication/presentation/views/reset_password.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_in_view.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:fluentfolio/src/features/general/intro_view.dart';
@@ -9,4 +10,5 @@ final Map<String, WidgetBuilder> routes = {
   IntroView.routeName: (context) => const IntroView(),
   SignInView.routeName: (context) => const SignInView(),
   SignUpView.routeName: (context) => const SignUpView(),
+  ResetPasswordView.routeName: (context) => const ResetPasswordView(),
 };

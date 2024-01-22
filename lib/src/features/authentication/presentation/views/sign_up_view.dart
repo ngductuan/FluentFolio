@@ -1,4 +1,3 @@
-import 'package:fluentfolio/src/features/authentication/presentation/widgets/other_sign_in_icon.dart';
 import 'package:fluentfolio/src/shared/widgets/elevated_button.dart';
 import 'package:fluentfolio/src/shared/widgets/text_field.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +8,7 @@ import 'package:fluentfolio/src/constants/styles.dart';
 class SignUpView extends StatefulWidget {
   const SignUpView({Key? key}) : super(key: key);
 
-  static String routeName = '/sign_up_screen';
+  static String routeName = '/sign_up_view';
 
   @override
   State<SignUpView> createState() => _SignUpViewState();
@@ -33,7 +32,7 @@ class _SignUpViewState extends State<SignUpView> {
               const SizedBox(height: spacing16),
               Text(
                 TextDoc.txtSignUpIntroduction,
-                style: AppTextStyle.defaultStyle.fontHeader.bold,
+                style: AppTextStyle(context).getDefaultStyle().fontHeader.bold,
                 textAlign: TextAlign.start,
               ),
               const SizedBox(height: spacing16),
@@ -68,12 +67,13 @@ class _SignUpViewState extends State<SignUpView> {
                           _termCheck = newBool;
                           setState(() {});
                         }),
-                    const Text(TextDoc.txtTermsAccept,
-                        style: AppTextStyle.defaultStyle),
+                    Text(TextDoc.txtTermsAccept,
+                        style: AppTextStyle(context).getDefaultStyle()),
                     const SizedBox(width: spacing12),
                     Text(
                       TextDoc.txtTerms,
-                      style: AppTextStyle.defaultStyle
+                      style: AppTextStyle(context)
+                          .getDefaultStyle()
                           .setColor(AppColor.mainColor1)
                           .semibold,
                     ),
@@ -90,16 +90,17 @@ class _SignUpViewState extends State<SignUpView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(TextDoc.txtHaveAnAccount,
-                        style: AppTextStyle.defaultStyle),
+                    Text(TextDoc.txtHaveAnAccount,
+                        style: AppTextStyle(context).getDefaultStyle()),
                     const SizedBox(width: spacing12),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, SignUpView.routeName);
+                        Navigator.pop(context);
                       },
                       child: Text(
-                        TextDoc.txtSignUp,
-                        style: AppTextStyle.defaultStyle
+                        TextDoc.txtSignIn,
+                        style: AppTextStyle(context)
+                            .getDefaultStyle()
                             .setColor(AppColor.mainColor1)
                             .semibold,
                       ),

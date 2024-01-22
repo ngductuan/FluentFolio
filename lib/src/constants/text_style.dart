@@ -1,3 +1,4 @@
+import 'package:fluentfolio/src/constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentfolio/src/constants/styles.dart';
 
@@ -71,12 +72,14 @@ extension ExtendedTextStyle on TextStyle {
 class AppTextStyle {
   AppTextStyle(this.context);
 
-  BuildContext? context;
+  final BuildContext context;
 
-  static const TextStyle defaultStyle = TextStyle(
-    fontSize: 16,
-    color: AppColor.defaultFontLight,
-    fontWeight: FontWeight.w400,
-    height: 16 / 13,
-  );
+  TextStyle getDefaultStyle() {
+    return TextStyle(
+      fontSize: 16,
+      color: colorsByTheme(context).defaultFont ?? AppColor.defaultFontLight,
+      fontWeight: FontWeight.w400,
+      height: 16 / 13,
+    );
+  }
 }

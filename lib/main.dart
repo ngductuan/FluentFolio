@@ -1,4 +1,7 @@
 import 'package:fluentfolio/routes.dart';
+import 'package:fluentfolio/src/constants/theme.dart';
+import 'package:fluentfolio/src/features/authentication/presentation/views/reset_password.dart';
+import 'package:fluentfolio/src/features/authentication/presentation/views/sign_in_view.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:fluentfolio/src/features/general/splash_view.dart';
 import 'package:fluentfolio/src/helpers/local_storage_helper.dart';
@@ -20,12 +23,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: getThemeData(context, isDarkTheme: false),
         debugShowCheckedModeBanner: false,
         routes: routes,
-        home: const SignUpView());
+        home: const SignInView());
   }
 }

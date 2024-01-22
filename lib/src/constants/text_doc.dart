@@ -7,7 +7,7 @@ class TextDoc {
 
   static String settings = 'Settings';
 
-  static String appName = 'Centalki';
+  static String appName = 'FluentFolio';
 
   // Authentication
   static String txtEmailEmptyWarning = 'E-mail address cannot be empty';
@@ -19,7 +19,7 @@ class TextDoc {
   static String txtSignInYourAccount = 'Sign in your account';
   static String txtNotAccount = 'Don\'t have an account?';
   static String txtForgotPasswordIntroduction =
-      'Your email used to sign in Centalki';
+      'Your email used to sign in FluentFolio';
   static String txtReturnSignIn = 'Return Sign In';
   static String txtWelcomeSignIn = 'Speak English Everyday';
   static String txtWelcomeForgotPassword =
@@ -70,11 +70,12 @@ class TextDoc {
   static const txtTermsAccept = 'I accept';
   static const txtSignInIntroduction =
       'Sign in to start practicing your English speaking skill';
-  static const txtSignUpIntroduction = 'Sign up to discover Centalki';
+  static const txtSignUpIntroduction = 'Sign up to discover FluentFolio';
   static const txtResetPasswordIntroduction =
-      'Enter the email address you used for Centalki';
+      'Enter the email address you used for FluentFolio';
   static const txtResetPasswordDescription =
       'We\'ll send you a link to reset your password';
+  static const txtGoToSignIn = 'Go to Sign In';
 
   // UI elements
   static const txtSignIn = 'Sign In';
@@ -263,12 +264,12 @@ class TextDoc {
   static const txtRateOurApp = 'Rate Our App';
   static const txtPleaseTellUsWatUThink = 'Please tell us what you think';
   static const txtSend = 'Send';
-  static const txtCentalkiTitle = 'centalki';
-  static const txtCentalkiDescription =
+  static const txtFluentFolioTitle = 'FluentFolio';
+  static const txtFluentFolioDescription =
       'Practice English speaking with foreign teachers';
-  static const txtCentalkiSource =
-      'Developed by Centalki Team\n2023, All Rights Reserved\nContact: centalki.dev@gmail.com';
-  static const txtCentalkiVersion = 'Version 0.4.0';
+  static const txtFluentFolioSource =
+      'Developed by FluentFolio Team\n2023, All Rights Reserved\nContact: FluentFolio.dev@gmail.com';
+  static const txtFluentFolioVersion = 'Version 0.4.0';
   static const txtLastUpdated = 'Last updated: Jun 16, 2023';
 
   // Feedback
