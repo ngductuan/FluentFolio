@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "162990216208",
+    "project_id": "fluentfolio-de883",
+    "storage_bucket": "fluentfolio-de883.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162990216208:android:5334d28ef6e42e5d05a695",
+        "android_client_info": {
+          "package_name": "com.example.fluentfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPPxRYD_apuyrD0egLH9bFRf6AF37HT5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

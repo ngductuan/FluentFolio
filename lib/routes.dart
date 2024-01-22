@@ -6,8 +6,11 @@ import 'package:fluentfolio/src/features/general/splash_view.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, WidgetBuilder> routes = {
+  // Introduction
   SplashView.routeName: (context) => const SplashView(),
   IntroView.routeName: (context) => const IntroView(),
+
+  // Authentication
   SignInView.routeName: (context) => const SignInView(),
   SignUpView.routeName: (context) => const SignUpView(),
   ResetPasswordView.routeName: (context) => const ResetPasswordView(),
