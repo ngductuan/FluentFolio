@@ -40,9 +40,10 @@ class TextFieldCustom extends StatelessWidget {
         const SizedBox(
           height: spacing16,
         ),
-        TextField(
+        TextFormField(
           style: AppTextStyle(context).getDefaultStyle().fontHeader,
           decoration: InputDecoration(
+            hintText: inputType != 'password' ? 'example@gmail.com' : '',
             border: const OutlineInputBorder(),
             focusColor: Colors.red,
             focusedBorder: OutlineInputBorder(
@@ -62,6 +63,15 @@ class TextFieldCustom extends StatelessWidget {
           keyboardType: _getKeyboardType(inputType),
           // textInputAction: TextInputAction.done,
           obscureText: inputType == 'password' ? true : false,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter some text';
+            }
+            return null;
+          },
+          onSaved: (value) {
+            print(value);
+          },
         )
       ],
     );

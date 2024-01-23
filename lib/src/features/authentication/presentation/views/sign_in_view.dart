@@ -37,20 +37,24 @@ class _SignInViewState extends State<SignInView> {
                 style: AppTextStyle(context).getDefaultStyle().fontHeader.bold,
                 textAlign: TextAlign.start,
               ),
-              const SizedBox(height: spacing16),
-              const TextFieldCustom(
-                title: TextDoc.txtEmail,
-                inputType: 'email',
-              ),
-              const SizedBox(height: spacing16),
-              const TextFieldCustom(
-                title: TextDoc.txtPassword,
-                inputType: 'password',
-              ),
-              const SizedBox(height: spacing32),
-              const ElevatedCustom(
-                title: 'Sign in',
-                radius: radius24,
+              const Column(
+                children: [
+                  SizedBox(height: spacing16),
+                  TextFieldCustom(
+                    title: TextDoc.txtEmail,
+                    inputType: 'email',
+                  ),
+                  SizedBox(height: spacing16),
+                  TextFieldCustom(
+                    title: TextDoc.txtPassword,
+                    inputType: 'password',
+                  ),
+                  SizedBox(height: spacing32),
+                  ElevatedCustom(
+                    title: 'Sign in',
+                    radius: radius24,
+                  ),
+                ],
               ),
               Container(
                 padding:
