@@ -34,7 +34,7 @@ class _ElevatedCustomState extends State<ElevatedCustom> {
       borderRadius: const BorderRadius.all(Radius.circular(25)),
       color: widget.color ?? AppColor.mainColor2,
       child: InkWell(
-        onTap: () {},
+        onTap: widget.ontap,
         splashColor: AppColor.background.shade200,
         child: Ink(
           decoration: BoxDecoration(

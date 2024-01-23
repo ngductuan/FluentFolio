@@ -54,6 +54,9 @@ class AppColor extends ThemeExtension<AppColor> {
   static const support =
       MaterialColor(0xFF55C885, AppColorSwatch.secondarySwatch);
   static const error = MaterialColor(0xFFFF6363, AppColorSwatch.errorSwatch);
+
+  static const errorFocusBorder = MaterialColor(0xFF9D0606, {});
+
   // Font Colors
   static const defaultFontLight =
       MaterialColor(0xFF1B1B2A, AppColorSwatch.defaultFontSwatch);

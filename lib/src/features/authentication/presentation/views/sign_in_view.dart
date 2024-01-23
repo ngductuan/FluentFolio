@@ -19,6 +19,8 @@ class SignInView extends StatefulWidget {
 }
 
 class _SignInViewState extends State<SignInView> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,24 +39,38 @@ class _SignInViewState extends State<SignInView> {
                 style: AppTextStyle(context).getDefaultStyle().fontHeader.bold,
                 textAlign: TextAlign.start,
               ),
-              const Column(
-                children: [
-                  SizedBox(height: spacing16),
-                  TextFieldCustom(
-                    title: TextDoc.txtEmail,
-                    inputType: 'email',
-                  ),
-                  SizedBox(height: spacing16),
-                  TextFieldCustom(
-                    title: TextDoc.txtPassword,
-                    inputType: 'password',
-                  ),
-                  SizedBox(height: spacing32),
-                  ElevatedCustom(
-                    title: 'Sign in',
-                    radius: radius24,
-                  ),
-                ],
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    const SizedBox(height: spacing16),
+                    const TextFieldCustom(
+                      title: TextDoc.txtEmail,
+                      inputType: 'email',
+                    ),
+                    const SizedBox(height: spacing16),
+                    const TextFieldCustom(
+                      title: TextDoc.txtPassword,
+                      inputType: 'password',
+                    ),
+                    const SizedBox(height: spacing32),
+                    ElevatedCustom(
+                      title: 'Sign in',
+                      radius: radius24,
+                      ontap: () {
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState!.save();
+                          // Do something with the saved data
+                          //   print('Name: $_name');
+                          //   print('Email: $_email');
+                          //   print('Date: $_selectedDate');
+                          // }
+                          print('Validated');
+                        }
+                      },
+                    ),
+                  ],
+                ),
               ),
               Container(
                 padding:

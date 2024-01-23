@@ -45,7 +45,7 @@ class TextFieldCustom extends StatelessWidget {
           decoration: InputDecoration(
             hintText: inputType != 'password' ? 'example@gmail.com' : '',
             border: const OutlineInputBorder(),
-            focusColor: Colors.red,
+            // focusColor: Colors.red,
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
                   color: borderColor ?? Colors.yellow.shade700, width: 2),
@@ -59,18 +59,35 @@ class TextFieldCustom extends StatelessWidget {
                     color: AppColor.shadow,
                   )
                 : null,
+            errorStyle: AppTextStyle(context)
+                .getDefaultStyle()
+                .setColor(AppColor.error),
+            errorBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: AppColor.error),
+            ),
+            focusedErrorBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: AppColor.errorFocusBorder),
+            ),
           ),
+
           keyboardType: _getKeyboardType(inputType),
           // textInputAction: TextInputAction.done,
           obscureText: inputType == 'password' ? true : false,
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter some text';
+              switch (inputType) {
+                case 'email':
+                  return 'Please enter your email';
+                case 'password':
+                  return 'Please enter your password';
+                default:
+                  return null;
+              }
             }
             return null;
           },
           onSaved: (value) {
-            print(value);
+            // print(value);
           },
         )
       ],
