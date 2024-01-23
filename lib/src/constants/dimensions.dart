@@ -35,7 +35,8 @@ const radius24 = 24.0;
 
 // Elevation
 
-
+// Icon size
+const iconBottomNav24 = 24.0;
 
 // Example
 // const BorderRadius kDefaultBorderRadius = BorderRadius.all(Radius.circular(8));

@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
+// Use this function to get color
 AppColor colorsByTheme(context) => Theme.of(context).extension<AppColor>()!;
 
+bool isDarkThemeHold = false;
+
+// Only use theme to config
 ThemeData getThemeData(
   BuildContext context, {
   bool isDarkTheme = false,
-}) =>
-    ThemeData(
+}) {
+  // isDarkThemeHold
+  isDarkThemeHold = isDarkTheme;
+
+  return ThemeData(
       extensions: <AppColor>[
         AppColor(
           defaultFont: isDarkTheme
@@ -68,3 +75,5 @@ ThemeData getThemeData(
       unselectedWidgetColor:
           isDarkTheme ? AppColor.shadow : AppColor.backgroundDark,
     );
+}
+    

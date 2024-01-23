@@ -18,6 +18,8 @@ class ResetPasswordView extends StatefulWidget {
 }
 
 class _ResetPasswordViewState extends State<ResetPasswordView> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,15 +39,29 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 style: AppTextStyle(context).getDefaultStyle().fontHeader.bold,
                 textAlign: TextAlign.start,
               ),
-              const SizedBox(height: spacing16),
-              const TextFieldCustom(
-                title: TextDoc.txtEmail,
-                inputType: 'email',
+              Form(
+                key: _formKey,
+                child: const Column(
+                  children: [
+                    SizedBox(height: spacing16),
+                    TextFieldCustom(
+                      title: TextDoc.txtEmail,
+                      inputType: 'email',
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: spacing32),
-              const ElevatedCustom(
+              ElevatedCustom(
                 title: 'Sign in',
                 radius: radius24,
+                ontap: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+
+                    // print(_formKey.toString());
+                  }
+                },
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: spacing32),

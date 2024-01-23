@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
 import 'package:fluentfolio/src/constants/styles.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
+  final _formKey = GlobalKey<FormState>();
   bool? _termCheck = false;
 
   @override
@@ -35,25 +37,32 @@ class _SignUpViewState extends State<SignUpView> {
                 style: AppTextStyle(context).getDefaultStyle().fontHeader.bold,
                 textAlign: TextAlign.start,
               ),
-              const SizedBox(height: spacing16),
-              const TextFieldCustom(
-                title: TextDoc.txtFullName,
-                inputType: 'text',
-              ),
-              const SizedBox(height: spacing16),
-              const TextFieldCustom(
-                title: TextDoc.txtEmail,
-                inputType: 'email',
-              ),
-              const SizedBox(height: spacing16),
-              const TextFieldCustom(
-                title: TextDoc.txtPassword,
-                inputType: 'password',
-              ),
-              const SizedBox(height: spacing16),
-              const TextFieldCustom(
-                title: TextDoc.txtRetypePassword,
-                inputType: 'password',
+              Form(
+                key: _formKey,
+                child: const Column(
+                  children: [
+                    SizedBox(height: spacing16),
+                    TextFieldCustom(
+                      title: TextDoc.txtFullName,
+                      inputType: 'text',
+                    ),
+                    SizedBox(height: spacing16),
+                    TextFieldCustom(
+                      title: TextDoc.txtEmail,
+                      inputType: 'email',
+                    ),
+                    SizedBox(height: spacing16),
+                    TextFieldCustom(
+                      title: TextDoc.txtPassword,
+                      inputType: 'password',
+                    ),
+                    SizedBox(height: spacing16),
+                    TextFieldCustom(
+                      title: TextDoc.txtRetypePassword,
+                      inputType: 'password',
+                    ),
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: spacing24),
@@ -80,9 +89,16 @@ class _SignUpViewState extends State<SignUpView> {
                   ],
                 ),
               ),
-              const ElevatedCustom(
+              ElevatedCustom(
                 title: 'Sign in',
                 radius: radius24,
+                ontap: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+
+                    // print(_formKey.toString());
+                  }
+                },
               ),
               Padding(
                 padding:

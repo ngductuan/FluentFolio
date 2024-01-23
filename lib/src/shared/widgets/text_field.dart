@@ -28,6 +28,17 @@ class TextFieldCustom extends StatelessWidget {
     }
   }
 
+  String _hintText(String inputType) {
+    switch (inputType) {
+      case 'text':
+        return 'Nguyen Van A';
+      case 'email':
+        return 'example@gmail.com';
+      default:
+        return '';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,7 +54,7 @@ class TextFieldCustom extends StatelessWidget {
         TextFormField(
           style: AppTextStyle(context).getDefaultStyle().fontHeader,
           decoration: InputDecoration(
-            hintText: inputType != 'password' ? 'example@gmail.com' : '',
+            hintText: _hintText(inputType),
             border: const OutlineInputBorder(),
             // focusColor: Colors.red,
             focusedBorder: OutlineInputBorder(
@@ -87,7 +98,7 @@ class TextFieldCustom extends StatelessWidget {
             return null;
           },
           onSaved: (value) {
-            // print(value);
+            print(value);
           },
         )
       ],

@@ -62,6 +62,7 @@ class AppColor extends ThemeExtension<AppColor> {
       MaterialColor(0xFF1B1B2A, AppColorSwatch.defaultFontSwatch);
   static const defaultFontContainer =
       MaterialColor(0xFF3A3A4F, AppColorSwatch.defaultFontColorSwatch);
+
   // Generic Colors
   static const shadow = MaterialColor(0xFF9D9DAD, AppColorSwatch.shadowSwatch);
   static const container =
@@ -71,6 +72,7 @@ class AppColor extends ThemeExtension<AppColor> {
   static const white = MaterialColor(0xFFFFFFFF, AppColorSwatch.whiteSwatch);
   static const backgroundLight =
       MaterialColor(0xFFFFFFFF, AppColorSwatch.whiteSwatch);
+      
   //DarkMode
   static const backgroundLogo = MaterialColor(0xFF1c284C, {});
   static const defaultFontDark =
