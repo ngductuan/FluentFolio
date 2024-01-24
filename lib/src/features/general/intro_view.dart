@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:fluentfolio/src/constants/styles.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
-import 'package:fluentfolio/src/shared/widgets/elevated_button.dart';
+import 'package:fluentfolio/src/shared/widgets/buttons/elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

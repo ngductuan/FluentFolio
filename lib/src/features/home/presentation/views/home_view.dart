@@ -1,4 +1,7 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:fluentfolio/src/features/home/presentation/widgets/bottom_nav_bar.dart';
+import 'package:fluentfolio/src/features/topic/presentation/views/topic_view.dart';
+import 'package:fluentfolio/src/shared/widgets/toast/app_toast.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -14,18 +17,10 @@ class _HomeViewState extends State<HomeView> {
   int _currentIndex = 0;
 
   final tabs = [
-    Container(
-      child: const Center(child: Text('Topic')),
-    ),
-    Container(
-      child: const Center(child: Text('Favorite')),
-    ),
-    Container(
-      child: const Center(child: Text('Account')),
-    ),
-    Container(
-      child: const Center(child: Text('Setting')),
-    ),
+    const TopicView(),
+    const Center(child: Text('Favorite')),
+    const Center(child: Text('Account')),
+    const Center(child: Text('Setting'))
   ];
 
   void onTabChanged(int page) {
@@ -37,10 +32,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.blue),
-      body: SafeArea(
-        child: tabs[_currentIndex],
-      ),
+      body: tabs[_currentIndex],
       bottomNavigationBar: AppBottomNavBar(onTabChanged: onTabChanged),
     );
   }

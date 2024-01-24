@@ -21,6 +21,9 @@ ThemeData getThemeData(
           defaultFont: isDarkTheme
               ? AppColor.defaultFontDark
               : AppColor.defaultFontLight,
+          refectDefaultFont: isDarkTheme
+              ? AppColor.defaultFontLight
+              : AppColor.defaultFontDark,
           icon: isDarkTheme ? AppColor.secondary : AppColor.white,
           iconBackground:
               isDarkTheme ? AppColor.background : AppColor.secondary,

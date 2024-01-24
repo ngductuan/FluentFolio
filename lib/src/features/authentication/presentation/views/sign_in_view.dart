@@ -1,8 +1,8 @@
 import 'package:fluentfolio/src/features/authentication/presentation/views/reset_password.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/widgets/other_sign_in_icon.dart';
-import 'package:fluentfolio/src/shared/widgets/elevated_button.dart';
-import 'package:fluentfolio/src/shared/widgets/text_field.dart';
+import 'package:fluentfolio/src/shared/widgets/buttons/elevated_button.dart';
+import 'package:fluentfolio/src/shared/widgets/text_fields.dart/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';

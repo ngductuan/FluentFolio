@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColor extends ThemeExtension<AppColor> {
   AppColor({
     required this.defaultFont,
+    required this.refectDefaultFont,
     required this.icon,
     required this.iconBackground,
     required this.backgroundTheme,
@@ -16,6 +17,7 @@ class AppColor extends ThemeExtension<AppColor> {
   });
 
   final Color? defaultFont;
+  final Color? refectDefaultFont;
 
   ///ONLY FOR LEARN VOCABS BUTTON
   final Color? icon;
@@ -83,6 +85,7 @@ class AppColor extends ThemeExtension<AppColor> {
   @override
   ThemeExtension<AppColor> copyWith({
     Color? defaultFont,
+    Color? refectDefaultFont,
     Color? icon,
     Color? iconBackground,
     Color? backgroundTheme,
@@ -96,6 +99,7 @@ class AppColor extends ThemeExtension<AppColor> {
   }) =>
       AppColor(
         defaultFont: defaultFont ?? this.defaultFont,
+        refectDefaultFont: refectDefaultFont ?? this.refectDefaultFont,
         icon: icon ?? this.icon,
         iconBackground: iconBackground ?? this.iconBackground,
         backgroundTheme: backgroundTheme ?? this.backgroundTheme,
@@ -116,6 +120,7 @@ class AppColor extends ThemeExtension<AppColor> {
     }
     return AppColor(
       defaultFont: Color.lerp(defaultFont, other.defaultFont, t),
+      refectDefaultFont: Color.lerp(refectDefaultFont, other.refectDefaultFont, t),
       icon: Color.lerp(icon, other.icon, t),
       iconBackground: Color.lerp(iconBackground, other.iconBackground, t),
       backgroundTheme: Color.lerp(backgroundTheme, other.backgroundTheme, t),

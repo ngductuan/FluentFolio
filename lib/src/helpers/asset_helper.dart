@@ -8,6 +8,10 @@ class AssetHelper {
   static const String icoFilledAccount = 'assets/icons/account_filled.png';
   static const String icoSetting = 'assets/icons/settings.png';
   static const String icoFilledSetting = 'assets/icons/settings_filled.png';
+  static const String icoErrorToast = 'assets/icons/ic_error_toast.svg';
+  static const String icoWhiteTick = 'assets/icons/white_tick.svg';
+  static const String icoWhiteExclamation = 'assets/icons/white_exclamation.svg';
+  static const String icoNotification = 'assets/icons/ic_noti.svg';
 
 
   //Assets in images

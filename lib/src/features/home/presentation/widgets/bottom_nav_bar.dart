@@ -1,8 +1,8 @@
-import 'package:fluentfolio/src/constants/colors.dart';
-import 'package:fluentfolio/src/constants/dimensions.dart';
+import 'package:fluentfolio/src/constants/styles.dart';
 import 'package:fluentfolio/src/constants/theme.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
+import 'package:fluentfolio/src/shared/widgets/toast/app_toast.dart';
 import 'package:flutter/material.dart';
 
 class AppBottomNavBar extends StatefulWidget {
@@ -60,6 +60,11 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
           // Update the index when a bottom navigation item is tapped.
           _currentIndex = index;
           widget.onTabChanged(_currentIndex);
+          // AppToast(
+          //   context: context,
+          //   message: TextDoc.txtAddFavoriteSuccess,
+          //   mode: AppToastMode.warning,
+          // ).show(context);
         },
         items: [
           _bottomNavItem('Topic', AssetHelper.icoDashboard,

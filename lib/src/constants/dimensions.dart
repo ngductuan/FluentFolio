@@ -38,5 +38,11 @@ const radius24 = 24.0;
 // Icon size
 const iconBottomNav24 = 24.0;
 
+// Appbar height
+const appBarHeight90 = 90.0;
+
+// Apptoast
+const appToastIcon22 = 22.0;
+
 // Example
 // const BorderRadius kDefaultBorderRadius = BorderRadius.all(Radius.circular(8));
