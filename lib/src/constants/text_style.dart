@@ -46,10 +46,16 @@ extension ExtendedTextStyle on TextStyle {
 
   TextStyle get fontHeader {
     return copyWith(
-      fontSize: (18.0 + differenceFont),
-      height: (18.0 + differenceFont) / (16.0 + differenceFont),
+      fontSize: (14.0 + differenceFont),
+      height: (14.0 + differenceFont) / (12.0 + differenceFont),
     );
   }
+
+  // TextStyle get fontHeaderNoHeight {
+  //   return copyWith(
+  //     fontSize: (14.0 + differenceFont),
+  //   );
+  // }
 
   TextStyle get fontCaption {
     return copyWith(
