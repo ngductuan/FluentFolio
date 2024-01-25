@@ -30,24 +30,31 @@ extension ExtendedTextStyle on TextStyle {
     return copyWith(fontWeight: FontWeight.w700);
   }
 
-  TextStyle get fontSuperHeader {
+  TextStyle get fontLeading2 {
     return copyWith(
-      fontSize: 22,
-      height: 22 / 20,
+      fontSize: (22.0 + differenceFont),
+      height: (22.0 + differenceFont) / (20.0 + differenceFont),
+    );
+  }
+
+  TextStyle get fontLeading1 {
+    return copyWith(
+      fontSize: (20.0 + differenceFont),
+      height: (20.0 + differenceFont) / (18.0 + differenceFont),
     );
   }
 
   TextStyle get fontHeader {
     return copyWith(
-      fontSize: 18,
-      height: 18 / 16,
+      fontSize: (18.0 + differenceFont),
+      height: (18.0 + differenceFont) / (16.0 + differenceFont),
     );
   }
 
   TextStyle get fontCaption {
     return copyWith(
-      fontSize: 12,
-      height: 12 / 10,
+      fontSize: (12.0 + differenceFont),
+      height: (12.0 + differenceFont) / (10.0 + differenceFont),
     );
   }
 
@@ -67,6 +74,10 @@ extension ExtendedTextStyle on TextStyle {
   TextStyle setTextSize(double size) {
     return copyWith(fontSize: size);
   }
+
+  TextStyle setFontFamily(String fontFamily) {
+    return copyWith(fontFamily: fontFamily);
+  }
 }
 
 class AppTextStyle {
@@ -76,10 +87,11 @@ class AppTextStyle {
 
   TextStyle getDefaultStyle() {
     return TextStyle(
-      fontSize: 16,
+      fontSize: 10.0 + differenceFont,
       color: colorsByTheme(context).defaultFont ?? AppColor.defaultFontLight,
+      fontFamily: dongLeFont,
       fontWeight: FontWeight.w400,
-      height: 16 / 13,
+      height: (10.0 + differenceFont) / (8.0 + differenceFont),
     );
   }
 }

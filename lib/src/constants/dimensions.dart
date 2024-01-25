@@ -36,13 +36,36 @@ const radius24 = 24.0;
 // Elevation
 
 // Icon size
-const iconBottomNav24 = 24.0;
+const iconBottomNav26 = 26.0;
+
+// Bottom navigation height
+const bottomNavHeightAndroid = 70.0;
+const bottomNavHeightIOS = 93.0;
 
 // Appbar height
-const appBarHeight90 = 90.0;
+const appBarHeight = 100.0;
 
 // Apptoast
-const appToastIcon22 = 22.0;
+const iconAppToast22 = 22.0;
+
+// Difference between DongLe (small) and NotoSans (big)
+const differenceFont = 14.0;
+// const differenceFont = 0;
+
+// Font family
+const noToSansFont = 'NotoSans';
+const dongLeFont = 'Dongle';
+
+// Font size for DongLe font
+const fontSize16 = 16.0;
+const fontSize18 = 18.0;
+const fontSize12 = 12.0;
+const fontSize14 = 14.0;
+const fontSize20 = 20.0;
+const fontSize22 = 22.0;
+const fontSize24 = 24.0;
+const fontSize26 = 26.0;
+const fontSize28 = 28.0;
 
 // Example
 // const BorderRadius kDefaultBorderRadius = BorderRadius.all(Radius.circular(8));

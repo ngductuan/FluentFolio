@@ -1,9 +1,9 @@
 import 'package:fluentfolio/src/constants/styles.dart';
-import 'package:fluentfolio/src/constants/theme.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
 import 'package:fluentfolio/src/shared/widgets/toast/app_toast.dart';
 import 'package:flutter/material.dart';
+import 'dart:io' show Platform;
 
 class AppBottomNavBar extends StatefulWidget {
   final void Function(int) onTabChanged;
@@ -15,28 +15,34 @@ class AppBottomNavBar extends StatefulWidget {
 }
 
 class _AppBottomNavBarState extends State<AppBottomNavBar> {
-  int _currentIndex = 0;
+  late int _currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = 0;
+  }
 
   BottomNavigationBarItem _bottomNavItem(
       String label, String icoBefore, String icoAfter) {
     return BottomNavigationBarItem(
-      icon: ImageHelper.loadFromAsset(
-        icoBefore,
-        width: iconBottomNav24,
-        height: iconBottomNav24,
-      ),
-      activeIcon: ImageHelper.loadFromAsset(
-        icoAfter,
-        width: iconBottomNav24,
-        height: iconBottomNav24,
-      ),
-      label: label,
-    );
+        icon: ImageHelper.loadFromAsset(
+          icoBefore,
+          width: iconBottomNav26,
+          height: iconBottomNav26,
+        ),
+        activeIcon: ImageHelper.loadFromAsset(
+          icoAfter,
+          width: iconBottomNav26,
+          height: iconBottomNav26,
+        ),
+        label: label);
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: Platform.isAndroid ? bottomNavHeightAndroid : bottomNavHeightIOS,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -52,10 +58,12 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
         fixedColor: AppColor.mainColor1,
         type: BottomNavigationBarType.fixed,
         // unselected label
-        unselectedItemColor: colorsByTheme(context).defaultFont,
-        unselectedFontSize: 12,
-        selectedFontSize: 14,
+        unselectedItemColor: colorsByTheme(context).hintTextColor,
+        unselectedFontSize: fontSize12,
+        selectedFontSize: fontSize14,
         backgroundColor: colorsByTheme(context).backgroundTheme,
+        // selectedItemColor: Colors.red,
+        // selectedItemColor: const Color(0xFF42A5F5),
         onTap: (index) {
           // Update the index when a bottom navigation item is tapped.
           _currentIndex = index;

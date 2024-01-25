@@ -47,20 +47,20 @@ class AppToast extends Flushbar {
                   ? ImageHelper.loadFromAsset(
                       AssetHelper.icoWhiteTick,
                       tintColor: const Color(0xFF039855),
-                      height: appToastIcon22,
-                      width: appToastIcon22,
+                      height: iconAppToast22,
+                      width: iconAppToast22,
                     )
                   : mode == AppToastMode.error
                       ? ImageHelper.loadFromAsset(
                           AssetHelper.icoErrorToast,
-                          height: appToastIcon22,
-                          width: appToastIcon22,
+                          height: iconAppToast22,
+                          width: iconAppToast22,
                         )
                       : ImageHelper.loadFromAsset(
                           AssetHelper.icoWhiteExclamation,
                           tintColor: Colors.yellow[700],
-                          height: appToastIcon22,
-                          width: appToastIcon22,
+                          height: iconAppToast22,
+                          width: iconAppToast22,
                         ),
         );
 }
