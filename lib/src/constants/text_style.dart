@@ -64,13 +64,13 @@ extension ExtendedTextStyle on TextStyle {
     );
   }
 
-  TextStyle get whiteTextColor {
-    return copyWith(color: AppColor.white);
-  }
+  // TextStyle get whiteTextColor {
+  //   return copyWith(color: AppColor.white);
+  // }
 
-  TextStyle get subTitleTextColor {
-    return copyWith(color: AppColor.defaultFontLight.shade500);
-  }
+  // TextStyle get subTitleTextColor {
+  //   return copyWith(color: AppColor.defaultFontLight.shade500);
+  // }
 
   // convenience functions
   TextStyle setColor(Color color) {

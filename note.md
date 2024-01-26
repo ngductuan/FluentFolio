@@ -1,0 +1,1 @@
++ Store state when click tab bar of topic view

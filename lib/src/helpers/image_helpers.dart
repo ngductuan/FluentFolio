@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ImageHelper {
+  // Load local images
   static Widget loadFromAsset(
     String imageFilePath, {
     double? width,
@@ -41,4 +42,6 @@ class ImageHelper {
       );
     }
   }
+
+  // Load images from url (CachedNetworkImage)
 }

@@ -1,4 +1,8 @@
 import 'package:fluentfolio/src/constants/styles.dart';
+import 'package:fluentfolio/src/features/topic/presentation/views/elementary_topic_view.dart';
+import 'package:fluentfolio/src/features/topic/presentation/views/intermediate_topic_view.dart';
+import 'package:fluentfolio/src/features/topic/presentation/views/pre_intermediate_topic_view.dart';
+import 'package:fluentfolio/src/features/topic/presentation/views/upper_intermediate_topic_view.dart';
 import 'package:fluentfolio/src/features/topic/presentation/widgets/select_topic_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -46,23 +50,11 @@ class _SelectTopicViewState extends State<SelectTopicView>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          Text(
-            "It's cloudy here 1",
-            style: AppTextStyle(context).getDefaultStyle(),
-          ),
-          Text(
-            "It's rainy here 2",
-            style: AppTextStyle(context).getDefaultStyle(),
-          ),
-          Text(
-            "It's sunny here 3",
-            style: AppTextStyle(context).getDefaultStyle(),
-          ),
-          Text(
-            "It's sunny here 4",
-            style: AppTextStyle(context).getDefaultStyle(),
-          ),
+        children: const [
+          ElementaryTopicView(),
+          PreIntermediateTopicView(),
+          IntermediateTopicView(),
+          UpperIntermediateTopicView(),
         ],
       ),
     );
