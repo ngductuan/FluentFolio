@@ -84,7 +84,9 @@ class _TopicCardState extends State<TopicCard> {
                                     AssetHelper.icoFilledHeart,
                                     tintColor: AppColor.error)
                                 : ImageHelper.loadFromAsset(
-                                    AssetHelper.icoHeart)
+                                    AssetHelper.icoHeart,
+                                    tintColor:
+                                        colorsByTheme(context).defaultFont)
                             // : Assets.icon.icHeartFill.svg(
                             //     width: 24,
                             //     height: 24,
@@ -94,11 +96,14 @@ class _TopicCardState extends State<TopicCard> {
                       ],
                     ),
                     const SizedBox(
-                      height: spacing8,
+                      height: spacing2,
                     ),
                     Text(
                       widget.topicCategory,
-                      style: AppTextStyle(context).getDefaultStyle(),
+                      style: AppTextStyle(context)
+                          .getDefaultStyle()
+                          .fontSize8
+                          .light,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),

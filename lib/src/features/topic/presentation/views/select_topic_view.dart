@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 class SelectTopicView extends StatefulWidget {
   const SelectTopicView({super.key});
 
+  static String routeName = '/select_topic_view';
+
   @override
   State<SelectTopicView> createState() => _SelectTopicViewState();
 }

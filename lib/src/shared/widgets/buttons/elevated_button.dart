@@ -6,11 +6,11 @@ class ElevatedCustom extends StatefulWidget {
       {super.key,
       required this.title,
       this.ontap,
-      this.height = spacing16,
+      this.height = spacing56,
       this.width,
       this.color,
       this.textStyle,
-      this.radius = 16.0,
+      this.radius = 25.0,
       this.elevation = 0});
 
   final String title;
@@ -31,7 +31,7 @@ class _ElevatedCustomState extends State<ElevatedCustom> {
   Widget build(BuildContext context) {
     return Material(
       elevation: widget.elevation,
-      borderRadius: const BorderRadius.all(Radius.circular(25)),
+      borderRadius: BorderRadius.all(Radius.circular(widget.radius)),
       color: widget.color ?? AppColor.mainColor2,
       child: InkWell(
         onTap: widget.ontap,
@@ -41,6 +41,9 @@ class _ElevatedCustomState extends State<ElevatedCustom> {
               borderRadius: const BorderRadius.all(Radius.circular(25)),
               color: widget.color ?? AppColor.mainColor2),
           child: Container(
+            // height: widget.height,
+            height: 52,
+            width: widget.width,
             padding: const EdgeInsets.symmetric(
                 vertical: padding16, horizontal: padding8),
             alignment: Alignment.center,

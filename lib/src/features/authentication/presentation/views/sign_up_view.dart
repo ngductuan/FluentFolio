@@ -1,5 +1,5 @@
 import 'package:fluentfolio/src/shared/widgets/buttons/elevated_button.dart';
-import 'package:fluentfolio/src/shared/widgets/text_fields.dart/text_field.dart';
+import 'package:fluentfolio/src/shared/widgets/text_fields.dart/form_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
@@ -42,22 +42,22 @@ class _SignUpViewState extends State<SignUpView> {
                 child: const Column(
                   children: [
                     SizedBox(height: spacing16),
-                    TextFieldCustom(
+                    FormTextFieldCustom(
                       title: TextDoc.txtFullName,
                       inputType: 'text',
                     ),
                     SizedBox(height: spacing16),
-                    TextFieldCustom(
+                    FormTextFieldCustom(
                       title: TextDoc.txtEmail,
                       inputType: 'email',
                     ),
                     SizedBox(height: spacing16),
-                    TextFieldCustom(
+                    FormTextFieldCustom(
                       title: TextDoc.txtPassword,
                       inputType: 'password',
                     ),
                     SizedBox(height: spacing16),
-                    TextFieldCustom(
+                    FormTextFieldCustom(
                       title: TextDoc.txtRetypePassword,
                       inputType: 'password',
                     ),

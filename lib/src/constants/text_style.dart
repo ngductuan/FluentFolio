@@ -44,6 +44,13 @@ extension ExtendedTextStyle on TextStyle {
     );
   }
 
+  TextStyle get fontSize16 {
+    return copyWith(
+      fontSize: (16.0 + differenceFont),
+      height: (16.0 + differenceFont) / (14.0 + differenceFont),
+    );
+  }
+
   TextStyle get fontHeader {
     return copyWith(
       fontSize: (14.0 + differenceFont),
@@ -61,6 +68,13 @@ extension ExtendedTextStyle on TextStyle {
     return copyWith(
       fontSize: (12.0 + differenceFont),
       height: (12.0 + differenceFont) / (10.0 + differenceFont),
+    );
+  }
+
+  TextStyle get fontSize8 {
+    return copyWith(
+      fontSize: (8.0 + differenceFont),
+      height: (8.0 + differenceFont) / (6.0 + differenceFont),
     );
   }
 
@@ -95,6 +109,17 @@ class AppTextStyle {
     return TextStyle(
       fontSize: 10.0 + differenceFont,
       color: colorsByTheme(context).defaultFont ?? AppColor.defaultFontLight,
+      fontFamily: dongLeFont,
+      fontWeight: FontWeight.w400,
+      height: (10.0 + differenceFont) / (8.0 + differenceFont),
+    );
+  }
+
+  TextStyle getShadowStyle() {
+    return const TextStyle(
+      fontSize: 10.0 + differenceFont,
+      // color: colorsByTheme(context).hintTextColor ?? AppColor.shadow,
+      color: AppColor.shadow,
       fontFamily: dongLeFont,
       fontWeight: FontWeight.w400,
       height: (10.0 + differenceFont) / (8.0 + differenceFont),

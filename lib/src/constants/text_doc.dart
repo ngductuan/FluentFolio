@@ -452,4 +452,8 @@ class TextDoc {
   static const txtBlock = "Block";
   static const txtUnknownError = 'Something went wrong!';
   static const txtBuySuccess = 'Payment succeed!';
+
+  // Topic-Search
+  static const txtFound = 'Found';
+  static const txtTopicSearch = 'topics';
 }

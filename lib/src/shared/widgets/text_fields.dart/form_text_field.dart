@@ -3,8 +3,8 @@ import 'package:fluentfolio/src/constants/dimensions.dart';
 import 'package:fluentfolio/src/constants/text_style.dart';
 import 'package:flutter/material.dart';
 
-class TextFieldCustom extends StatelessWidget {
-  const TextFieldCustom({
+class FormTextFieldCustom extends StatelessWidget {
+  const FormTextFieldCustom({
     Key? key,
     required this.title,
     required this.inputType,

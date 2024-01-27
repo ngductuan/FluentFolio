@@ -46,44 +46,51 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: colorsByTheme(context).hintTextColor ?? Colors.black,
+            // color: colorsByTheme(context).hintTextColor ?? Colors.black,
+            color: AppColor.shadow.shade500,
             blurRadius: isDarkThemeHold ? 5 : 2,
           ),
         ],
       ),
-      child: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        elevation: 30,
-        // selected label
-        fixedColor: AppColor.mainColor1,
-        type: BottomNavigationBarType.fixed,
-        // unselected label
-        unselectedItemColor: colorsByTheme(context).hintTextColor,
-        unselectedFontSize: fontSize12,
-        selectedFontSize: fontSize14,
-        backgroundColor: colorsByTheme(context).backgroundTheme,
-        // selectedItemColor: Colors.red,
-        // selectedItemColor: const Color(0xFF42A5F5),
-        onTap: (index) {
-          // Update the index when a bottom navigation item is tapped.
-          _currentIndex = index;
-          widget.onTabChanged(_currentIndex);
-          // AppToast(
-          //   context: context,
-          //   message: TextDoc.txtAddFavoriteSuccess,
-          //   mode: AppToastMode.warning,
-          // ).show(context);
-        },
-        items: [
-          _bottomNavItem('Topic', AssetHelper.icoDashboard,
-              AssetHelper.icoFilledDashboard),
-          _bottomNavItem('Favorite', AssetHelper.icoFavorite,
-              AssetHelper.icoFilledFavorite),
-          _bottomNavItem(
-              'Account', AssetHelper.icoAccount, AssetHelper.icoFilledAccount),
-          _bottomNavItem(
-              'Setting', AssetHelper.icoSetting, AssetHelper.icoFilledSetting),
-        ],
+      child: Theme(
+        data: Theme.of(context).copyWith(
+          splashColor: Colors.transparent, // Remove splash color
+          highlightColor: Colors.transparent, // Remove highlight color
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          elevation: 30,
+          // selected label
+          fixedColor: AppColor.mainColor1,
+          type: BottomNavigationBarType.fixed,
+          // unselected label
+          unselectedItemColor: AppColor.shadow,
+          unselectedFontSize: fontSize12,
+          selectedFontSize: fontSize14,
+          backgroundColor: colorsByTheme(context).backgroundTheme,
+          // selectedItemColor: Colors.red,
+          // selectedItemColor: const Color(0xFF42A5F5),
+          onTap: (index) {
+            // Update the index when a bottom navigation item is tapped.
+            _currentIndex = index;
+            widget.onTabChanged(_currentIndex);
+            // AppToast(
+            //   context: context,
+            //   message: TextDoc.txtAddFavoriteSuccess,
+            //   mode: AppToastMode.warning,
+            // ).show(context);
+          },
+          items: [
+            _bottomNavItem('Topic', AssetHelper.icoDashboard,
+                AssetHelper.icoFilledDashboard),
+            _bottomNavItem('Favorite', AssetHelper.icoFavorite,
+                AssetHelper.icoFilledFavorite),
+            _bottomNavItem('Account', AssetHelper.icoAccount,
+                AssetHelper.icoFilledAccount),
+            _bottomNavItem('Setting', AssetHelper.icoSetting,
+                AssetHelper.icoFilledSetting),
+          ],
+        ),
       ),
     );
   }

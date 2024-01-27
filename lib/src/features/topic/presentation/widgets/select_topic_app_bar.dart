@@ -1,3 +1,4 @@
+import 'package:fluentfolio/src/features/search_topic/presentation/views/search_topic_view.dart';
 import 'package:fluentfolio/src/shared/widgets/tab_indicator/tab_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentfolio/src/constants/styles.dart';
@@ -11,7 +12,7 @@ class SelectTopicAppBar extends StatefulWidget implements PreferredSizeWidget {
   State<SelectTopicAppBar> createState() => _SelectTopicAppBarState();
 
   @override
-  Size get preferredSize => const Size.fromHeight(appBarHeight);
+  Size get preferredSize => const Size.fromHeight(appBarHeightSelectTopic);
 }
 
 class _SelectTopicAppBarState extends State<SelectTopicAppBar> {
@@ -21,7 +22,7 @@ class _SelectTopicAppBarState extends State<SelectTopicAppBar> {
       backgroundColor: colorsByTheme(context).backgroundTheme,
       automaticallyImplyLeading: false,
       elevation: 0,
-      toolbarHeight: appBarHeight,
+      toolbarHeight: appBarHeightSelectTopic,
       title: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -46,7 +47,9 @@ class _SelectTopicAppBarState extends State<SelectTopicAppBar> {
             Icons.search_rounded,
             color: AppColor.mainColor1,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, SearchTopicView.routeName);
+          },
         ),
         IconButton(
           icon: const Icon(
@@ -61,6 +64,7 @@ class _SelectTopicAppBarState extends State<SelectTopicAppBar> {
             color: AppColor.secondary,
             height: spacing2,
           ),
+          dividerColor: AppColor.shadow,
           indicatorColor: AppColor.secondary,
           labelColor: AppColor.secondary,
           unselectedLabelColor: colorsByTheme(context).tabTitleColor,

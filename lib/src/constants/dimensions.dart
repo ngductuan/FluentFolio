@@ -24,8 +24,10 @@ const spacing28 = 28.0;
 const spacing32 = 32.0;
 const spacing40 = 40.0;
 const spacing48 = 48.0;
+const spacing50 = 50.0;
 const spacing56 = 56.0;
 const spacing60 = 60.0;
+const spacing64 = 64.0;
 const spacing80 = 80.0;
 // Border Radius
 const radius8 = 8.0;
@@ -40,10 +42,11 @@ const iconBottomNav26 = 26.0;
 
 // Bottom navigation height
 const bottomNavHeightAndroid = 70.0;
-const bottomNavHeightIOS = 93.0;
+const bottomNavHeightIOS = 100.0; //93.0
 
 // Appbar height
-const appBarHeight = 100.0;
+const appBarHeightSelectTopic = 100.0;
+const appBarHeightSearchTopic = 80.0;
 
 // Apptoast
 const iconAppToast22 = 22.0;
