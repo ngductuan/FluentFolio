@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fluentfolio/src/constants/styles.dart';
+import 'package:fluentfolio/src/features/topic_details/presentation/views/topic_details_view.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,7 @@ import 'package:flutter/material.dart';
 class TopicCard extends StatefulWidget {
   const TopicCard({super.key});
 
-  final String imgUrl = AssetHelper.imgTopicUrl;
+  final String imgUrl = TempNote.imgTopicUrl;
   final String topicName = 'Weekend Activities';
   final String topicCategory = 'Daily conversation';
   final bool topicBookmark = false;
@@ -20,7 +21,9 @@ class _TopicCardState extends State<TopicCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, TopicDetailsView.routeName);
+      },
       child: Container(
         margin: const EdgeInsets.all(spacing8),
         height: 120,

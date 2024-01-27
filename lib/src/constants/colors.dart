@@ -14,6 +14,7 @@ class AppColor extends ThemeExtension<AppColor> {
     required this.backgroundCardsChip,
     required this.expansionIcon,
     required this.selectableChipBg,
+    required this.rippleColor,
   });
 
   final Color? defaultFont;
@@ -33,6 +34,7 @@ class AppColor extends ThemeExtension<AppColor> {
   final Color? backgroundCardsChip;
   final Color? expansionIcon;
   final Color? selectableChipBg;
+  final Color? rippleColor;
 
   // Main Color 1
   static const mainColor1 =
@@ -79,7 +81,7 @@ class AppColor extends ThemeExtension<AppColor> {
   static const backgroundLogo = MaterialColor(0xFF1c284C, {});
   static const defaultFontDark =
       MaterialColor(0xFFFFFFFF, AppColorSwatch.whiteSwatch);
-  static const backgroundDark = MaterialColor(0xFF121212, {});
+  static const backgroundDark = MaterialColor(0xFF121212, {}); // 0xFF121212
   static const darkModeContainer = MaterialColor(0xFF2C2C2C, {});
 
   @override
@@ -96,6 +98,7 @@ class AppColor extends ThemeExtension<AppColor> {
     Color? backgroundCardsChip,
     Color? expansionIcon,
     Color? selectableChipBg,
+    Color? rippleColor,
   }) =>
       AppColor(
         defaultFont: defaultFont ?? this.defaultFont,
@@ -111,6 +114,7 @@ class AppColor extends ThemeExtension<AppColor> {
         backgroundCardsChip: backgroundCardsChip ?? this.backgroundCardsChip,
         expansionIcon: expansionIcon ?? this.expansionIcon,
         selectableChipBg: selectableChipBg ?? this.selectableChipBg,
+        rippleColor: rippleColor ?? this.rippleColor,
       );
 
   @override
@@ -133,6 +137,7 @@ class AppColor extends ThemeExtension<AppColor> {
           Color.lerp(backgroundCardsChip, other.backgroundCardsChip, t),
       expansionIcon: Color.lerp(expansionIcon, other.expansionIcon, t),
       selectableChipBg: Color.lerp(selectableChipBg, other.selectableChipBg, t),
+      rippleColor: Color.lerp(rippleColor, other.rippleColor, t),
     );
   }
 }

@@ -6,6 +6,7 @@ import 'package:fluentfolio/src/features/general/splash_view.dart';
 import 'package:fluentfolio/src/features/home/presentation/views/home_view.dart';
 import 'package:fluentfolio/src/features/search_topic/presentation/views/search_topic_view.dart';
 import 'package:fluentfolio/src/features/topic/presentation/views/select_topic_view.dart';
+import 'package:fluentfolio/src/features/topic_details/presentation/views/topic_details_view.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, WidgetBuilder> routes = {
@@ -24,4 +25,5 @@ final Map<String, WidgetBuilder> routes = {
   // Topic
   SelectTopicView.routeName: (context) => const SelectTopicView(),
   SearchTopicView.routeName: (context) => const SearchTopicView(),
+  TopicDetailsView.routeName: (context) => const TopicDetailsView(),
 };

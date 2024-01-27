@@ -34,7 +34,4 @@ class AssetHelper {
   static const String logoFacebook = 'assets/logo/facebook.png';
   static const String logoGoogle = 'assets/logo/google.png';
   static const String logoApple = 'assets/logo/apple.png';
-
-  // Url image sample
-  static const String imgTopicUrl = 'https://firebasestorage.googleapis.com/v0/b/centalki.appspot.com/o/public%2Fschool-activity.jpeg?alt=media&token=d0c38734-a741-44e0-a888-a86bd7b739db';
 }

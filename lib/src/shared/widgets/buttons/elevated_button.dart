@@ -6,7 +6,7 @@ class ElevatedCustom extends StatefulWidget {
       {super.key,
       required this.title,
       this.ontap,
-      this.height = spacing56,
+      this.height = spacing52,
       this.width,
       this.color,
       this.textStyle,
@@ -35,26 +35,21 @@ class _ElevatedCustomState extends State<ElevatedCustom> {
       color: widget.color ?? AppColor.mainColor2,
       child: InkWell(
         onTap: widget.ontap,
-        splashColor: AppColor.background.shade200,
-        child: Ink(
-          decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(25)),
-              color: widget.color ?? AppColor.mainColor2),
-          child: Container(
-            // height: widget.height,
-            height: 52,
-            width: widget.width,
-            padding: const EdgeInsets.symmetric(
-                vertical: padding16, horizontal: padding8),
-            alignment: Alignment.center,
-            child: Text(
-              widget.title,
-              style: widget.textStyle ??
-                  AppTextStyle(context)
-                      .getDefaultStyle()
-                      .setColor(AppColor.defaultFontLight)
-                      .bold,
-            ),
+        splashColor: colorsByTheme(context).rippleColor,
+        borderRadius: const BorderRadius.all(Radius.circular(25)),
+        child: Container(
+          height: widget.height,
+          width: widget.width,
+          padding: const EdgeInsets.symmetric(
+              vertical: padding16, horizontal: padding8),
+          alignment: Alignment.center,
+          child: Text(
+            widget.title,
+            style: widget.textStyle ??
+                AppTextStyle(context)
+                    .getDefaultStyle()
+                    .setColor(AppColor.defaultFontLight)
+                    .bold,
           ),
         ),
       ),

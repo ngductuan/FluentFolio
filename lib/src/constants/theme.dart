@@ -41,6 +41,9 @@ ThemeData getThemeData(
         expansionIcon: isDarkTheme ? AppColor.background : AppColor.shadow,
         selectableChipBg:
             isDarkTheme ? AppColor.backgroundDark : Colors.transparent,
+        rippleColor: isDarkTheme
+            ? const Color.fromARGB(50, 98, 95, 95)
+            : const Color.fromARGB(21, 98, 95, 95),
       ),
     ],
     scaffoldBackgroundColor:
