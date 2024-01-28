@@ -2,6 +2,7 @@ import 'package:fluentfolio/src/features/authentication/presentation/views/reset
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_in_view.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:fluentfolio/src/features/favorites/presentation/views/favorite_view.dart';
+import 'package:fluentfolio/src/features/connect_teacher/presentation/views/connect_teacher_view.dart';
 import 'package:fluentfolio/src/features/general/intro_view.dart';
 import 'package:fluentfolio/src/features/general/splash_view.dart';
 import 'package:fluentfolio/src/features/home/presentation/views/home_view.dart';
@@ -30,4 +31,6 @@ final Map<String, WidgetBuilder> routes = {
 
   // Favorite
   FavoriteView.routeName: (context) => FavoriteView(),
+  // Connect teacher
+  ConnectTeacherView.routeName: (context) => const ConnectTeacherView()
 };

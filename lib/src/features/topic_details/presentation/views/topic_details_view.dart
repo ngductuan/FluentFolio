@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fluentfolio/src/constants/styles.dart';
+import 'package:fluentfolio/src/features/connect_teacher/presentation/views/connect_teacher_view.dart';
 import 'package:fluentfolio/src/features/topic_details/presentation/widgets/phrase_card.dart';
 import 'package:fluentfolio/src/features/topic_details/presentation/widgets/question_card.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
 import 'package:fluentfolio/src/shared/widgets/buttons/elevated_button.dart';
-import 'package:fluentfolio/src/shared/widgets/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 
 class TopicDetailsView extends StatefulWidget {
@@ -262,10 +262,11 @@ class _TopicDetailsViewState extends State<TopicDetailsView> {
           children: [
             Expanded(
               child: ElevatedCustom(
-                ontap: () {},
-                title: TextDoc.txtTalk,
-                height: spacing48,
-              ),
+                  title: TextDoc.txtTalk,
+                  height: spacing48,
+                  ontap: () {
+                    Navigator.pushNamed(context, ConnectTeacherView.routeName);
+                  }),
             ),
             Container(
               margin: const EdgeInsets.only(left: spacing8),
