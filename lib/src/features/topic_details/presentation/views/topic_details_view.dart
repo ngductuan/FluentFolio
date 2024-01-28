@@ -1,7 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fluentfolio/src/constants/styles.dart';
 import 'package:fluentfolio/src/features/topic_details/presentation/widgets/phrase_card.dart';
 import 'package:fluentfolio/src/features/topic_details/presentation/widgets/question_card.dart';
 import 'package:fluentfolio/src/helpers/asset_helper.dart';
+import 'package:fluentfolio/src/helpers/image_helpers.dart';
+import 'package:fluentfolio/src/shared/widgets/buttons/elevated_button.dart';
+import 'package:fluentfolio/src/shared/widgets/buttons/text_button.dart';
 import 'package:flutter/material.dart';
 
 class TopicDetailsView extends StatefulWidget {
@@ -17,6 +21,7 @@ class _TopicDetailsViewState extends State<TopicDetailsView> {
   late final ScrollController _scrollController;
 
   bool _showTitle = false;
+  final bool _bookmark = false;
 
   @override
   void initState() {
@@ -60,42 +65,31 @@ class _TopicDetailsViewState extends State<TopicDetailsView> {
                 color: colorsByTheme(context).defaultFont,
               ),
             ),
-            expandedHeight: 160.0,
+            expandedHeight: 165.0,
             centerTitle: true,
             flexibleSpace: FlexibleSpaceBar(
               title: _showTitle
-                  ? Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 60),
-                      child: SizedBox(
-                        height: 30,
-                        width: double.infinity,
-                        child: Text('Solutions to Climate Change',
-                            style: AppTextStyle(context)
-                                .getDefaultStyle()
-                                .fontSize16, // Adjust font size as needed
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis),
-                      ),
+                  ? Text(
+                      'Solutions to Climate Change',
+                      style: AppTextStyle(context)
+                          .getDefaultStyle()
+                          .fontSize16
+                          .setHeight(0.9),
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     )
                   : null,
-              background: Container(
-                // No need to fix
-                height: 144.0 + MediaQuery.of(context).padding.top,
+              background: SizedBox(
+                height: 144.0,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: const NetworkImage(TempNote.imgTopicUrl),
-                    fit: BoxFit.cover,
-                    onError: (_, __) => SizedBox(
-                      width: double.infinity,
-                      height: 144 + MediaQuery.of(context).padding.top,
-                      child: const Icon(
-                        Icons.error_outline_rounded,
-                        size: 40,
-                        color: AppColor.error,
-                      ),
-                    ),
+                child: CachedNetworkImage(
+                  imageUrl: TempNote.imgTopicUrl,
+                  fit: BoxFit.cover,
+                  errorWidget: (context, error, stackTrace) => const Icon(
+                    Icons.error_outline_rounded,
+                    size: 32,
+                    color: Colors.red,
                   ),
                 ),
               ),
@@ -248,7 +242,7 @@ class _TopicDetailsViewState extends State<TopicDetailsView> {
                         ),
                       ),
                       const SizedBox(
-                        height: spacing32,
+                        height: spacing16,
                       )
                     ],
                   ),
@@ -257,6 +251,62 @@ class _TopicDetailsViewState extends State<TopicDetailsView> {
             ),
           )
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(
+          left: spacing16,
+          right: spacing16,
+          bottom: spacing24,
+        ),
+        child: Row(
+          children: [
+            const Expanded(
+              child: ElevatedCustom(
+                title: TextDoc.txtTalk,
+                height: spacing48,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: spacing8),
+              padding: const EdgeInsets.all(padding8),
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(radius12)),
+                border: Border.all(
+                  width: _bookmark ? 2.0 : 1.0,
+                  color: _bookmark ? AppColor.error : AppColor.shadow,
+                ),
+              ),
+              child: GestureDetector(
+                onTap: () {},
+                child: _bookmark
+                    ? ImageHelper.loadFromAsset(AssetHelper.icoHeart)
+                    : ImageHelper.loadFromAsset(
+                        AssetHelper.icoFilledHeart,
+                        tintColor: AppColor.error,
+                      ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(
+                left: padding8,
+              ),
+              padding: const EdgeInsets.all(padding8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.0),
+                border: Border.all(
+                  color: AppColor.shadow,
+                ),
+              ),
+              child: GestureDetector(
+                onTap: () {},
+                child: const Icon(
+                  Icons.feedback_outlined,
+                  color: AppColor.shadow,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

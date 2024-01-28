@@ -95,6 +95,10 @@ extension ExtendedTextStyle on TextStyle {
     return copyWith(fontSize: size);
   }
 
+  TextStyle setHeight(double height) {
+    return copyWith(height: height);
+  }
+
   TextStyle setFontFamily(String fontFamily) {
     return copyWith(fontFamily: fontFamily);
   }
