@@ -260,8 +260,9 @@ class _TopicDetailsViewState extends State<TopicDetailsView> {
         ),
         child: Row(
           children: [
-            const Expanded(
+            Expanded(
               child: ElevatedCustom(
+                ontap: () {},
                 title: TextDoc.txtTalk,
                 height: spacing48,
               ),

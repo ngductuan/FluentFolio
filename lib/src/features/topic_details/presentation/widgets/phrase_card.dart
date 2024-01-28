@@ -32,68 +32,67 @@ class PhraseCard extends StatelessWidget {
             expandedCrossAxisAlignment: CrossAxisAlignment.start,
             // expandedAlignment: Alignment.topLeft,
 
+            // For expansion
             childrenPadding: const EdgeInsets.only(
               left: padding32,
               right: padding16,
               bottom: padding12,
             ),
-            title: Padding(
-              padding: const EdgeInsets.only(
-                top: padding4,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'clickbait',
-                          style: AppTextStyle(context)
-                              .getDefaultStyle()
-                              .bold
-                              .setColor(AppColor.mainColor1),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+            // For main
+            tilePadding:
+                const EdgeInsets.fromLTRB(padding16, padding8, padding8, 0),
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'clickbait',
+                        style: AppTextStyle(context)
+                            .getDefaultStyle()
+                            .bold
+                            .setColor(AppColor.mainColor1),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: bookmark
-                            ? const Icon(
-                                Icons.bookmark,
-                                color: AppColor.mainColor1,
-                                size: 24.0,
-                              )
-                            : const Icon(
-                                Icons.bookmark_border,
-                                color: AppColor.shadow,
-                                size: 24.0,
-                              ),
-                      )
-                    ],
-                  ),
-                  Text(
-                    "/ˈklɪkbeɪt/",
-                    style: AppTextStyle(context)
-                        .getDefaultStyle()
-                        .setTextSize(14)
-                        .setFontFamily(noToSansFont),
-                  ),
-                  const SizedBox(height: spacing4),
-                  // ...TempNote.phraseTranslations.map(
-                  //   // ...TempNote.phraseTranslations!.map(
-                  //   (e) => Text(
-                  //     e + "," ?? 'null meaning',
-                  //     style: AppTextStyle(context).getDefaultStyle().bold,
-                  //   ),
-                  // ),
-                  Text(
-                    TempNote.phraseTranslations.join(", "),
-                    style: AppTextStyle(context).getDefaultStyle().bold,
-                  )
-                ],
-              ),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: bookmark
+                          ? const Icon(
+                              Icons.bookmark,
+                              color: AppColor.mainColor1,
+                              size: 24.0,
+                            )
+                          : const Icon(
+                              Icons.bookmark_border,
+                              color: AppColor.shadow,
+                              size: 24.0,
+                            ),
+                    )
+                  ],
+                ),
+                Text(
+                  "/ˈklɪkbeɪt/",
+                  style: AppTextStyle(context)
+                      .getDefaultStyle()
+                      .setTextSize(14)
+                      .setFontFamily(noToSansFont),
+                ),
+                const SizedBox(height: spacing4),
+                // ...TempNote.phraseTranslations.map(
+                //   // ...TempNote.phraseTranslations!.map(
+                //   (e) => Text(
+                //     e + "," ?? 'null meaning',
+                //     style: AppTextStyle(context).getDefaultStyle().bold,
+                //   ),
+                // ),
+                Text(
+                  TempNote.phraseTranslations.join(", "),
+                  style: AppTextStyle(context).getDefaultStyle().bold,
+                )
+              ],
             ),
             children: [
               const SizedBox(height: spacing2),

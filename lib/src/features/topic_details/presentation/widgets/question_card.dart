@@ -30,8 +30,10 @@ class QuestionCard extends StatelessWidget {
             iconColor: colorsByTheme(context).expansionIcon,
             collapsedIconColor: colorsByTheme(context).expansionIcon,
             expandedCrossAxisAlignment: CrossAxisAlignment.start,
+            // For expansion
             childrenPadding:
-                const EdgeInsets.fromLTRB(padding16, 0, padding8, padding16),
+                const EdgeInsets.fromLTRB(padding16, padding8, padding8, 0),
+            // For main
             tilePadding:
                 const EdgeInsets.fromLTRB(padding16, padding8, padding8, 0),
             title: Row(
