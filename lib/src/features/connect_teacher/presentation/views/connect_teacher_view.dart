@@ -36,7 +36,61 @@ class _ConnectTeacherViewState extends State<ConnectTeacherView> {
               child: Center(
                 child: ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text(
+                              TextDoc.txtCancelTitle,
+                              style: AppTextStyle(context)
+                                  .getDefaultStyle()
+                                  .fontSize16,
+                              textAlign: TextAlign.center,
+                            ),
+                            content: Text(
+                              TextDoc.txtCancelContent,
+                              style: AppTextStyle(context)
+                                  .getDefaultStyle()
+                                  .fontSize8
+                                  .light,
+                              textAlign: TextAlign.center,
+                            ),
+                            actions: <Widget>[
+                              Row(children: [
+                                Expanded(
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: AppColorSwatch
+                                            .secondarySwatch[900]),
+                                    child: Text(
+                                      TextDoc.txtNo,
+                                      style: AppTextStyle(context)
+                                          .getDefaultStyle(),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ),
+                                Expanded(
+                                  child: TextButton(
+                                    child: Text(
+                                      TextDoc.txtYes,
+                                      style: AppTextStyle(context)
+                                          .getDefaultStyle(),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ),
+                              ]),
+                            ],
+                          );
+                        });
+                    // Navigator.of(context).pop();
                   },
                   icon: Icon(Icons.close,
                       color: AppColorSwatch.secondarySwatch[900]),
@@ -51,7 +105,7 @@ class _ConnectTeacherViewState extends State<ConnectTeacherView> {
             Center(
               child: Text(
                 TextDoc.txtFindTeacher,
-                style: AppTextStyle(context).getDefaultStyle(),
+                style: AppTextStyle(context).getDefaultStyle().fontSize16,
               ),
             ),
           ]),
