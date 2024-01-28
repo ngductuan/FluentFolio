@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class UpperIntermediateTopicView extends StatefulWidget {
   const UpperIntermediateTopicView({super.key});
 
+  final int length = 9;
+
   @override
   State<UpperIntermediateTopicView> createState() =>
       _UpperIntermediateTopicViewState();
@@ -23,13 +25,18 @@ class _UpperIntermediateTopicViewState
                 margin: const EdgeInsets.only(top: spacing16),
                 child: const TopicCard(),
               );
+            } else if (index == widget.length - 1) {
+              return Container(
+                margin: const EdgeInsets.only(bottom: spacing16),
+                child: const TopicCard(),
+              );
             } else {
               return const TopicCard();
             }
           },
           separatorBuilder: (context, index) =>
               const SizedBox(height: spacing8),
-          itemCount: 9),
+          itemCount: widget.length),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:fluentfolio/src/features/favorites/presentation/views/favorite_view.dart';
 import 'package:fluentfolio/src/features/home/presentation/widgets/bottom_nav_bar.dart';
 import 'package:fluentfolio/src/features/topic/presentation/views/select_topic_view.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +16,8 @@ class _HomeViewState extends State<HomeView> {
   int _currentIndex = 0;
 
   final tabs = [
-    const SelectTopicView(),
-    const Center(child: Text('Favorite')),
+    SelectTopicView(),
+    FavoriteView(),
     const Center(child: Text('Account')),
     const Center(child: Text('Setting'))
   ];

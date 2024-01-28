@@ -1,6 +1,7 @@
 class TempNote{
   // Url image sample
   static const String imgTopicUrl = 'https://firebasestorage.googleapis.com/v0/b/centalki.appspot.com/o/public%2Fschool-activity.jpeg?alt=media&token=d0c38734-a741-44e0-a888-a86bd7b739db';
+  static const String imgTopicUrl2 = 'https://firebasestorage.googleapis.com/v0/b/centalki.appspot.com/o/public%2Ffood-waste.jpg?alt=media&token=32b29ccc-e87b-45e3-837c-a8e86a058440';
 
   // Topic details
   static const String topicDetailsDes = 'From earlier times, mass media plays a crucial role in shaping public opinion, keeping people informed about current events, facilitating communication, and even influencing societal and cultural standards. You can discuss various types of media and share your thoughts about their characteristics and the content validity they supply.';

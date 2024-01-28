@@ -1,6 +1,7 @@
 import 'package:fluentfolio/src/features/authentication/presentation/views/reset_password.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_in_view.dart';
 import 'package:fluentfolio/src/features/authentication/presentation/views/sign_up_view.dart';
+import 'package:fluentfolio/src/features/favorites/presentation/views/favorite_view.dart';
 import 'package:fluentfolio/src/features/general/intro_view.dart';
 import 'package:fluentfolio/src/features/general/splash_view.dart';
 import 'package:fluentfolio/src/features/home/presentation/views/home_view.dart';
@@ -23,7 +24,10 @@ final Map<String, WidgetBuilder> routes = {
   HomeView.routeName: (context) => const HomeView(),
 
   // Topic
-  SelectTopicView.routeName: (context) => const SelectTopicView(),
+  SelectTopicView.routeName: (context) => SelectTopicView(),
   SearchTopicView.routeName: (context) => const SearchTopicView(),
   TopicDetailsView.routeName: (context) => const TopicDetailsView(),
+
+  // Favorite
+  FavoriteView.routeName: (context) => FavoriteView(),
 };

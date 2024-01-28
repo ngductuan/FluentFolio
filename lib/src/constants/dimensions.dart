@@ -46,8 +46,12 @@ const iconBottomNav26 = 26.0;
 const bottomNavHeightAndroid = 70.0;
 const bottomNavHeightIOS = 100.0; //93.0
 
-// Appbar height
-const appBarHeightSelectTopic = 100.0;
+// Global appbar height
+const appBarHeightAndBottomAndRejoinGlobal = 160.0;
+const appBarHeightAndBottomGlobal = 100.0;
+const appBarHeightGlobal = 50.0;
+
+// Specific appbar height
 const appBarHeightSearchTopic = 80.0;
 
 // Apptoast

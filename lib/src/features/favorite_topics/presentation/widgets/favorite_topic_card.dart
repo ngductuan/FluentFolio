@@ -5,19 +5,19 @@ import 'package:fluentfolio/src/helpers/asset_helper.dart';
 import 'package:fluentfolio/src/helpers/image_helpers.dart';
 import 'package:flutter/material.dart';
 
-class TopicCard extends StatefulWidget {
-  const TopicCard({super.key});
+class FavoriteTopicCard extends StatefulWidget {
+  const FavoriteTopicCard({super.key});
 
-  final String imgUrl = TempNote.imgTopicUrl;
+  final String imgUrl = TempNote.imgTopicUrl2;
   final String topicName = 'Weekend Activities';
   final String topicCategory = 'Daily conversation';
-  final bool topicBookmark = false;
+  final bool topicBookmark = true;
 
   @override
-  State<TopicCard> createState() => _TopicCardState();
+  State<FavoriteTopicCard> createState() => _FavoriteTopicCardState();
 }
 
-class _TopicCardState extends State<TopicCard> {
+class _FavoriteTopicCardState extends State<FavoriteTopicCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -35,7 +35,7 @@ class _TopicCardState extends State<TopicCard> {
               BoxShadow(
                 color: AppColor.shadow.shade300,
                 blurRadius: 4.0,
-                spreadRadius: 1,
+                spreadRadius: 1.0,
                 offset: const Offset(1, 2),
               )
             ]),
