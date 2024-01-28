@@ -13,22 +13,53 @@ class ConnectTeacherView extends StatefulWidget {
 }
 
 class _ConnectTeacherViewState extends State<ConnectTeacherView> {
+  // Giả lập kết nối
+  bool connectedTeacher = false;
+  bool launchingSession = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _startConnectTeacher();
+  }
+
+  void _startConnectTeacher() {
+    Future.delayed(const Duration(seconds: 3), () {
+      setState(() {
+        connectedTeacher = true;
+      });
+    });
+
+    Future.delayed(const Duration(seconds: 6), () {
+      setState(() {
+        launchingSession = true;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColorSwatch.mainColor2Swatch[900],
+      backgroundColor: launchingSession
+          ? AppColorSwatch.supportSwatch[900]
+          : AppColorSwatch.mainColor2Swatch[900],
       body: Stack(children: [
         Positioned(
           child: Stack(children: [
-            WaveWidget(
-              config: CustomConfig(
-                colors: [AppColorSwatch.secondarySwatch[900]!],
-                durations: [5000],
-                heightPercentages: [0.6],
+            if (!launchingSession)
+              WaveWidget(
+                config: CustomConfig(
+                  colors: [
+                    connectedTeacher
+                        ? AppColorSwatch.mainColor1Swatch[900]!
+                        : AppColorSwatch.secondarySwatch[900]!
+                  ],
+                  durations: [5000],
+                  heightPercentages: [0.6],
+                ),
+                size: const Size(double.infinity, double.infinity),
+                waveAmplitude: 10.0,
               ),
-              size: const Size(double.infinity, double.infinity),
-              waveAmplitude: 10.0,
-            ),
             Positioned(
               bottom: 60,
               right: 0,
@@ -103,9 +134,29 @@ class _ConnectTeacherViewState extends State<ConnectTeacherView> {
               ),
             ),
             Center(
-              child: Text(
-                TextDoc.txtFindTeacher,
-                style: AppTextStyle(context).getDefaultStyle().fontSize16,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  if (launchingSession)
+                    const CircleAvatar(
+                      radius: 50.0, // Đường kính của Avatar
+                      backgroundImage: AssetImage(
+                          'assets/avatar/avatar-01.png'), // Ảnh đại diện
+                    ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Text(
+                    connectedTeacher
+                        ? (launchingSession
+                            ? '${TextDoc.txtConnectedTeacher}Nguyễn Bình${TextDoc.txtLaunchSession}'
+                            : TextDoc.txtConnectedTeacher)
+                        : TextDoc.txtFindTeacher,
+                    style: AppTextStyle(context).getDefaultStyle().fontSize16,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
             ),
           ]),
