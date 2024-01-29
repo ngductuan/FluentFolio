@@ -10,11 +10,11 @@ class AssetHelper {
   static const String icoFilledSetting = 'assets/icons/settings_filled.png';
   static const String icoErrorToast = 'assets/icons/ic_error_toast.svg';
   static const String icoWhiteTick = 'assets/icons/white_tick.svg';
-  static const String icoWhiteExclamation = 'assets/icons/white_exclamation.svg';
+  static const String icoWhiteExclamation =
+      'assets/icons/white_exclamation.svg';
   static const String icoNotification = 'assets/icons/ic_noti.svg';
   static const String icoHeart = 'assets/icons/ic_heart.svg';
   static const String icoFilledHeart = 'assets/icons/ic_heart_fill.svg';
-
 
   //Assets in images
   static const String imgIntroFirst = 'assets/images/intro_first.svg';
@@ -28,6 +28,8 @@ class AssetHelper {
       'assets/illustration/sign-up-illustration.png';
   static const String illuForgotPassword =
       'assets/illustration/forgot-password-illustration.png';
+  static const String iluHangUpMeeting =
+      'assets/illustration/after-hang-up.svg';
 
   //Assets in logo
   static const String logoBackgroundSplash = 'assets/logo/fluent_folio_bg.png';

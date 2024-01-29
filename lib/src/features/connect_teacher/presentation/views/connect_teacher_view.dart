@@ -24,16 +24,20 @@ class _ConnectTeacherViewState extends State<ConnectTeacherView> {
   }
 
   void _startConnectTeacher() {
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 1), () {
       setState(() {
         connectedTeacher = true;
       });
     });
 
-    Future.delayed(const Duration(seconds: 6), () {
+    Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         launchingSession = true;
       });
+    });
+
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushNamed(context, '/hang_up_meeting_view');
     });
   }
 

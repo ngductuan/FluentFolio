@@ -1,6 +1,5 @@
-import 'package:fluentfolio/src/constants/theme.dart';
-import 'package:flutter/material.dart';
 import 'package:fluentfolio/src/constants/styles.dart';
+import 'package:flutter/material.dart';
 
 extension ExtendedTextStyle on TextStyle {
   TextStyle get light {
